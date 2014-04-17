@@ -1,0 +1,23 @@
+p{
+	font-family: Georgia; 
+}
+h1{
+	font-family: 'Wallpoet',Courier;
+	text-transform: uppercase;
+}
+h2{
+	font-family: 'Wallpoet',Courier;
+}
+p.byline{
+	font-family:'Condiment',Courier;
+	font-style:italic;
+}
+p{
+	font-family:'Open Sans',sans-serif;
+}
+a{
+	font-size:10px;
+}
+a:hover{
+	color:red;
+}
