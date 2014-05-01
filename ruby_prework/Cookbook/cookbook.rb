@@ -31,6 +31,12 @@ class Cookbook
 
 	
 	def print_cookbook
+		puts "Table of Contents"
+		puts "Recipes to make you a master of Mexican cooking!"
+		puts
+		@recipes.each {|recipe| puts "#{recipe.title}"}
+		puts "/////////////////////////////////////////////////"
+
 		@recipes.each do |recipe|
 			puts "#{recipe.title}"
 
@@ -51,7 +57,19 @@ class Cookbook
 			 	puts "#{count}: #{x}"
 			 	count += 1
 			end
+
+			puts
+
+			puts "#{recipe.calories}"
 		end
+	end
+
+	def calorie_counter
+		count = 0
+		@recipes.each do |recipe| 
+			count += recipe.calories.to_i
+		end
+		puts "If you ate everything from this book, you would consume #{count}"
 	end
 
 end
@@ -60,11 +78,13 @@ class Recipe
 	attr_reader :title
 	attr_writer :steps
 	attr_accessor :ingredients
+	attr_accessor :calories
 
-	def initialize(title, ingredients, steps)
+	def initialize(title, ingredients, steps, calories)
 		@title = title
 		@ingredients = ingredients
 		@steps = steps
+		@calories = calories
 	end
 
 	# def title
@@ -91,7 +111,7 @@ class Recipe
 	# 	@steps = new_steps
 	# end
 
-	def print_recipe #Method to print out each recipe title, ingredients, and steps.  Will print out one recipe at a time.
+	def print_recipe #Method to print out each recipe title, ingredients, steps, and calories.  Will print out one recipe at a time.
 		puts "We are making a #{title}"
 
 		puts
@@ -111,6 +131,10 @@ class Recipe
 			puts "#{count}: #{x}"
 			count += 1
 		end
+
+		puts
+
+		puts "#{calories}calories"
 	end
 end
 
