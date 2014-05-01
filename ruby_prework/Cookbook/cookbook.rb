@@ -28,6 +28,32 @@ class Cookbook
 	def recipe_ingredients #See comment for recipe_titles for explaination
 		@recipes.each {|recipe| puts "These are the ingredients for #{recipe.title}: #{recipe.ingredients}"}
 	end	
+
+	
+	def print_cookbook
+		@recipes.each do |recipe|
+			puts "#{recipe.title}"
+
+			puts
+
+			puts "Ingredients"
+			count = 1
+			recipe.ingredients.each do |x|
+				puts "#{count}: #{x}"
+				count += 1
+			end
+
+			puts
+
+			puts "Steps"
+			count = 1
+			recipe.steps.each do |x|
+			 	puts "#{count}: #{x}"
+			 	count += 1
+			end
+		end
+	end
+
 end
 
 class Recipe
@@ -65,7 +91,7 @@ class Recipe
 	# 	@steps = new_steps
 	# end
 
-	def print_recipe
+	def print_recipe #Method to print out each recipe title, ingredients, and steps.  Will print out one recipe at a time.
 		puts "We are making a #{title}"
 
 		puts
@@ -78,7 +104,7 @@ class Recipe
 		end
 
 		puts
-		
+
 		puts "Steps"
 		count = 1
 		@steps.each do |x|

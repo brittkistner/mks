@@ -27,8 +27,11 @@ p mex_cuisine.recipes # [#<Recipe:0x007fbc3b92e560 @title="Veggie Burrito", @ing
 mex_cuisine.recipe_titles # Veggie Burrito
 mex_cuisine.recipe_ingredients # These are the ingredients for Veggie Burrito: ["tortilla", "bean"]
 
+#Exercise 1
 burrito.print_recipe
-
+#Exercise 2
 mex_cuisine.add_recipe(taco)
-
 p mex_cuisine.recipes
+
+#Exercise 3
+mex_cuisine.print_cookbook
