@@ -2,6 +2,7 @@ require_relative 'cookbook'
 
 mex_cuisine = Cookbook.new("Mexican Cooking")
 burrito = Recipe.new("Bean Burrito", ["tortilla", "bean"], ["heat beans", "place beans in tortilla", "roll up"])
+taco = Recipe.new("Fish Taco", ["tortilla", "fish", "lettuce", "tomatoes", "special sauce"], ["cook fish", "chop lettuce and tomatoes", "place fish, lettuce, tomatoes in tortilla", "drizzle special sauce over contents and fold tortilla in half"])
 
 puts mex_cuisine.title # Mexican Cooking
 puts burrito.title # Bean Burrito
@@ -27,3 +28,7 @@ mex_cuisine.recipe_titles # Veggie Burrito
 mex_cuisine.recipe_ingredients # These are the ingredients for Veggie Burrito: ["tortilla", "bean"]
 
 burrito.print_recipe
+
+mex_cuisine.add_recipe(taco)
+
+p mex_cuisine.recipes
