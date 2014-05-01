@@ -66,9 +66,25 @@ class Recipe
 	# end
 
 	def print_recipe
-		print #title
-		print #ingredients
-		print #steps
+		puts "We are making a #{title}"
+
+		puts
+
+		puts "Ingredients"
+		count = 1
+		@ingredients.each do |x|
+			puts "#{count}: #{x}"
+			count += 1
+		end
+
+		puts
+		
+		puts "Steps"
+		count = 1
+		@steps.each do |x|
+			puts "#{count}: #{x}"
+			count += 1
+		end
 	end
 end
 
