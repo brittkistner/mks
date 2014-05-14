@@ -49,18 +49,7 @@ class Person
 
 end
 
-class PowerRanger < Person
-	attr_accessor :strength
-	attr_accessor :status_color
-	attr_accessor :original_color
-
-	def initialize(name, caffeine_level = 100, strength = 0, color = "pink")
-		super(name, caffeine_level)
-		@strength = strength
-		@original_color = color
-		@status_color = color
-	end
-
+module Punch	
 	def punch(citizen = nil)
 		if citizen.nil?
 			puts "Hey, you didn't pass in a person."
@@ -72,6 +61,21 @@ class PowerRanger < Person
 		if strength > 5
 			puts "#{citizen.name} was somersaulted into the air.  Oh my!"
 		end
+	end
+end
+
+class PowerRanger < Person
+	include Punch
+
+	attr_accessor :strength
+	attr_accessor :status_color
+	attr_accessor :original_color
+
+	def initialize(name, caffeine_level = 100, strength = 0, color = "pink")
+		super(name, caffeine_level)
+		@strength = strength
+		@original_color = color
+		@status_color = color
 	end
 
 	def use_megazord(citizen = nil)
@@ -95,26 +99,15 @@ end
 
 class EvilNinja < Person
 
+	include Punch
+
 	attr_reader :strength, :evilness
 
 	def initialize(name, caffeine_level = 100, strength, evilness)
 		super(name, caffeine_level)
 		@strength = strength
 		@evilness = evilness
-	end
-	
-	def punch(citizen = nil)
-		if citizen.nil?
-			puts "Hey, you didn't pass in a person."
-			return nil 
-		end
-		puts citizen.scream
-		puts citizen.run
-		@caffeine_level -= 5 
-		if strength > 5
-			puts "#{citizen.name} was somersaulted into the air.  Oh my!"
-		end
-	end
+	end	
 
 	def cause_mayhem(citizen = nil)
 		if citizen.nil?
