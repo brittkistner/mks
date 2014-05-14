@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>Guess the Number!</title>
+</head>
+<body>
+<h1>Guess the Number!</h1>
+<script type="text/javascript">
+  alert('Hello World!');
+  var secretNumber = parseInt(Math.random() * 100, 10) + 1;
+  var number = prompt("Please choose a number between 1 and 100.")
+  if (number != secretNumber) {
+	  if (number > secretNumber) {
+	  	alert("Pick a lower number.");
+	  };
+	  if (number < secretNumber) {
+	  	alert("Pick a high number.");
+	  };
+  };
+  // if (number === secretNumber) {
+  // 	alert("Congratulations! " + number " was the " + secretNumber);
+  // };
+</script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<html>
+<head>
+  <title>Javascript Bare</title>
+</head>
+<body>
+
+<script type="text/javascript">
+  // alert('hi');
+
+//Javascript Basics
+// Exercise #2
+  var name = prompt("What is your name?");
+  alert("Welcome back, " + name + "!");
+// Exercise #3.1
+  var firstName = prompt("What's your first name?")
+  var lastName = prompt("What's your last name?")
+  alert("Welcome " + firstName + " " + lastName + "!")
+// Exercise #3.2
+   var yes = prompt("Your done with this question, how do you respond?  Yes or No?");
+   alert(yes.toUpperCase());
+// Exercise #3.3
+   var firstName = prompt("What's your first name?")
+   var lastName = prompt("What's your last name?")
+   alert("Welcome " + firstName + " " + lastName.toUpperCase() + "!");
+// Exercise # 4
+	var age = prompt("How old are you?")
+    if (age < 0 || age > 100) {
+    	alert("Nice try, Get outta here!");
+    }
+    else if (age < 21) {
+    	alert("You're underage, you can't come in. : (");
+    }
+    else if (age >= 21 ) {
+    	alert("Welcome to the club!");
+    }
+    else {
+    	alert("Please try again.");
+    }
+// Extension
+// var a = "Fred"
+// var b = "Agnes"
+// var c = "Emma"
+// while (true) {
+// var reservation = prompt("What name is your reservation under?")
+// if (reservation == a || reservation == b || reservation)
+// }
+
+
+
+//Javascript Functions
+// Exercise #2
+var number = prompt("What is your favorite number?");
+if (number % 7 === 0) {
+	alert("Today is your lucky day!");
+}
+if (number % 2 === 0) {
+	alert("You are an even steven.");
+}
+// Exercise #3.1
+var yell = function(string) {
+	alert(string.toUpperCase()); //don't forget () after the toUpperCase function
+}
+yell("Hello");
+// Exercise #3.2
+var divideBy = function(x,y) {
+	return x / y;
+}
+var result = divideBy(50, 2);
+console.log('Result should be 25:', result);
+
+result = divideBy(40, 10);
+console.log('Result should be 4:', result);
+
+result = divideBy(99, 3);
+console.log('Result should be 33:', result);
+// Exercise #3.3
+var welcome = function(name1, name2) {
+	if (name1 && name2) {
+		return "Welcome " + name1 + " and " + name2 + "!"
+	};
+	if (name1 || name2) {
+		return "Welcome, " + name1 + "!"
+	};
+}
+
+var result = welcome('Alice', 'Bob');
+console.log('Result should be "Welcome, Alice and Bob!"', result);
+
+var result = welcome('Alice');
+console.log('Result should be "Welcome, Alice!"', result);
+// Exercise #4.1
+
+
+</script>
+
+</body>
+</html>

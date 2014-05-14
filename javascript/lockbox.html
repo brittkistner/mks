@@ -1,0 +1,56 @@
+<html>
+
+<head>
+  <title>Javascript Functions</title>
+  <style type="text/css">
+    .spacer {
+      height: 2500px;
+    }
+    #box {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="label">Clicks: 0</div>
+  <div class="spacer">
+    Scroll down (all the way down)
+  </div>
+
+  <p>
+    You see a box.
+    <a id="open-link" href="#">Open the box</a>
+    <button id="close-box">Close Box</button>
+  </p>
+
+  <p id="box">Surprise!</p>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    clicks = 0;
+
+    $('#open-link').on('click', function (e) {
+      e.preventDefault();
+      // alert("lol it's locked.");
+      $('#box').show(); //scroll down to see result
+    });
+    $("#close-box").on('click',function (e) {
+      $('#box').hide();
+    });
+
+    $(document).click(function(e){
+      clicks++;
+      $("#label").text("Clicks: " + clicks);
+      $(document).trigger("new-click-count", clicks);
+    });
+
+    $(document).on("new-click-count", function(e, num_clicks){
+        if (num_clicks % 5 === 0){
+          alert("New High Score:" + num_clicks + "!");
+      }
+    });
+  </script>
+
+</body>
+</html>
